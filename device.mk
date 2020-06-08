@@ -339,6 +339,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# QTI fwk-detect
+PRODUCT_PACKAGES += \
+    libvndfwk_detect_jni.qti.vendor # Needed by CNE app
+
 # Rootdir
 PRODUCT_PACKAGES += \
     init.class_main.sh \
