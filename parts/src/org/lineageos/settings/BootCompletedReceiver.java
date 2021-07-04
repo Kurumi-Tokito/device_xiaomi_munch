@@ -27,6 +27,7 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
+import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 import org.lineageos.settings.utils.FileUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -52,5 +53,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Dc-Dimming
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
+
+        // High Touch Polling Rate
+        TouchSamplingUtils.restoreSamplingValue(context);
     }
 }
