@@ -8,6 +8,11 @@ ro.audio.resampler.psd.halflength=960
 ro.audio.resampler.psd.cutoff_percent=98
 ro.audio.resampler.psd.tbwcheat=0
 
+# Bluetooth
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+persist.vendor.bt.a2dp.hal.implementation=true
+
 # Camera
 camera.disable_zsl_mode=true
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
