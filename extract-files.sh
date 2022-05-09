@@ -81,6 +81,10 @@ function blob_fixup() {
 LEGACY_MIFARE_READER=1
 EOF
             ;;
+        vendor/lib64/hw/camera.qcom.so)
+            [ "$2" = "" ] && return 0
+            sed -i "s/\x73\x74\x5F\x6C\x69\x63\x65\x6E\x73\x65\x2E\x6C\x69\x63/\x63\x61\x6D\x65\x72\x61\x5F\x63\x6E\x66\x2E\x74\x78\x74/g" "${2}"
+            ;;
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             [ "$2" = "" ] && return 0
             grep -q "libpiex_shim.so" "${2}" || ${PATCHELF} --add-needed "libpiex_shim.so" "${2}"
