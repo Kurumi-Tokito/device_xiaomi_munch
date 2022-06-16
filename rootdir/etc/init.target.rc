@@ -132,6 +132,8 @@ on early-boot
 on property:ro.boot.dp=0x0
     write /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/pshold_reboot 7
 
+# For cpusets initialize for Silver Only first and then Silver + Gold
+# Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chown system system /sys/class/touch/touch_dev/partial_diff_data
@@ -174,6 +176,11 @@ on boot
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ qca_cld3_qca6390 qca_cld3_qca6490
 
     write /sys/block/sda/queue/wbt_lat_usec 75000
+	# Allow system to manipulate KProfiles modes and parameters
+    chown system system /sys/module/kprofiles/parameters/auto_kp
+    chmod 0660 /sys/module/kprofiles/parameters/auto_kp
+    chown system system /sys/kernel/kprofiles/kp_mode
+    chmod 0660 /sys/kernel/kprofiles/kp_mode
 
     chown root system /sys/module/migt/parameters/add_lclus_affinity_uidlist
     chmod 0664 /sys/module/migt/parameters/add_lclus_affinity_uidlist
