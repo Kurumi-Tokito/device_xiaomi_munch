@@ -276,6 +276,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DuckDuckGo
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
