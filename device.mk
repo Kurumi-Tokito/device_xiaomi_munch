@@ -93,6 +93,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
 	frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
+# Background dexopt OTA
+PRODUCT_VENDOR_PROPERTIES += \
+    pm.dexopt.ab-ota=speed-profile
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
@@ -409,6 +413,12 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
+
+# Preopted ODEX files (system_other)
+PRODUCT_PACKAGES += \
+    cppreopts.sh
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cp_system_other_odex=1
 
 # Public libraries
 PRODUCT_COPY_FILES += \
