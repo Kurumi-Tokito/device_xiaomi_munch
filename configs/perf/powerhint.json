@@ -351,16 +351,6 @@
       "Type": "Property"
     },
     {
-      "Name": "TASchedtuneBoost",
-      "Path": "/dev/stune/top-app/schedtune.boost",
-      "Values": [
-        "30",
-        "10",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "DoubleTapToWake",
       "Path": "/sys/touchpanel/double_tap",
       "Values": [
@@ -563,18 +553,6 @@
       "Node": "L3BigPlusClusterMinFreq",
       "Duration": 3000,
       "Value": "1612800000"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "TASchedtuneBoost",
-      "Duration": 3000,
-      "Value": "30"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "TASchedtuneBoost",
-      "Duration": 0,
-      "Value": "0"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
