@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
@@ -123,6 +120,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
@@ -186,6 +186,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
+
+# Graphene AppStore
+PRODUCT_PACKAGES += \
+    AppStore
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
@@ -221,10 +226,6 @@ PRODUCT_PACKAGES += \
 # KProfiles
 PRODUCT_PACKAGES += \
     KProfiles
-
-# Graphene AppStore
-PRODUCT_PACKAGES += \
-    AppStore
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -265,10 +266,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
     com.android.nfc_extras \
-    NfcNci \
-    nqnfcinfo \
-    SecureElement \
     Tag
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.boot.hardware.sku=munch
+
+PRODUCT_PACKAGES += \
+    MunchNfcOverlay
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.ese.xml \
@@ -382,6 +386,9 @@ PRODUCT_PACKAGES += \
     init.xiaomi.rc \
     ueventd.qcom.rc
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl-xiaomi \
@@ -398,10 +405,6 @@ PRODUCT_COPY_FILES += \
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
-
-# Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -497,13 +500,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
-
-# NFC
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.boot.hardware.sku=munch
-
-PRODUCT_PACKAGES += \
-    MunchNfcOverlay
 
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
