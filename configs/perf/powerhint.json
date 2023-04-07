@@ -285,15 +285,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "PMQoSCpuDmaLatency",
-      "Path": "/dev/cpu_dma_latency",
-      "Values": [
-        "2c",
-        "100"
-      ],
-      "HoldFd": true
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -453,12 +444,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 3000,
-      "Value": "2c"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 3000,
       "Value": "0"
@@ -546,12 +531,6 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "ML_ACC",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 2000,
-      "Value": "2c"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
