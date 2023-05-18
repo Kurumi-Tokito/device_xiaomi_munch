@@ -92,9 +92,6 @@
 # Xiaomi Touch
 /dev/xiaomi-touch                                                                                   u:object_r:vendor_touchfeature_device:s0
 
-# Vibrator
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi_kona                                u:object_r:hal_vibrator_default_exec:s0
-
 # Ultrasound devices
 /dev/elliptic[0-9]+                                                                                 u:object_r:ultrasound_device:s0
 /dev/mius(.*)?                                                                                      u:object_r:ultrasound_device:s0
