@@ -79,6 +79,9 @@ TARGET_USES_GRALLOC4 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
+# Display HDR
+TARGET_HAS_HDR_DISPLAY := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/fs/config.fs
 
