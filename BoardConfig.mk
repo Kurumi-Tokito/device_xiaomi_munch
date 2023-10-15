@@ -81,6 +81,9 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/fs/config.fs
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
+ifneq ($(TARGET_IS_TABLET),true)
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest_phone.xml
+endif
 ODM_MANIFEST_SKUS += nfc
 ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/hidl/manifest_nfc.xml
 
@@ -163,6 +166,9 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+ifneq ($(TARGET_IS_TABLET),true)
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor_phone.prop
+endif
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
