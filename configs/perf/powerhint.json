@@ -328,7 +328,8 @@
       "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
         "30",
-        "10"
+        "10",
+        "0"
       ],
       "ResetOnInit": true
     }
@@ -513,6 +514,12 @@
       "Node": "TASchedtuneBoost",
       "Duration": 3000,
       "Value": "30"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "TASchedtuneBoost",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
