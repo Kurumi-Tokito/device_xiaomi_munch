@@ -284,6 +284,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
 
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+    DuckDuckGo
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -342,7 +346,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw 
+    libstagefrighthw
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
