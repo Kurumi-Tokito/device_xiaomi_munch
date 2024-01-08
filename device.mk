@@ -490,6 +490,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
+# Target VNDK Fallback version
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33 34
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
