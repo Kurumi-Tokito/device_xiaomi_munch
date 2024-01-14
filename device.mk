@@ -292,6 +292,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KProfiles
 
+# Graphene apps
+PRODUCT_PACKAGES += \
+    Apps
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
