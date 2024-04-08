@@ -76,6 +76,7 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
+vendor/lib/libdrc.so
 
 # Audio-Hardware
 vendor/lib/libaudio_log_utils.so
@@ -83,6 +84,7 @@ vendor/lib/libaudioroute_ext.so
 vendor/lib/libqtigef.so
 vendor/lib/libresampler.so
 vendor/lib/libssrec.so
+vendor/lib/libsurround_3mic_proc.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 
 # Audio firmware
@@ -100,6 +102,12 @@ vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
+
+# Audio FX modules dependencies
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
+vendor/bin/audioflacapp
+vendor/bin/loadalgo
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
