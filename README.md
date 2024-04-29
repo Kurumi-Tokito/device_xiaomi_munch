@@ -27,3 +27,12 @@ It is also known as POCO F4 (globally) and Redmi K40S (China).
 ![POCO F4](https://i.imgur.com/8vGvhMe.jpeg)
 
 Copyright (C) 2022 ArrowOS.
+# Common device tree for Xiaomi SM8250 devices
+
+```
+#
+# Copyright (C) 2021 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
