@@ -234,6 +234,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
+# Fonts
+PRODUCT_PACKAGES += \
+    GoogleSans-Regular.ttf \
+    GoogleSans-Italic.ttf
+
+# Overlays for UI font styles
+PRODUCT_PACKAGES += \
+    FontGoogleSansOverlay
+
+# Register new fonts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/extras/fonts/fonts_customization_google_sans.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization_google_sans.xml
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
