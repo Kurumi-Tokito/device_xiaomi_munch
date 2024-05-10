@@ -18,8 +18,4 @@ android_app {
         "org.lineageos.settings.resources",
         "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
     ],
-
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
 }
