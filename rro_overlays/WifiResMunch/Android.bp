@@ -1,6 +1,6 @@
 runtime_resource_overlay {
-    name: "WifiResCommon",
-    theme: "WifiResCommon",
+    name: "WifiResMunch",
+    theme: "WifiResMunch",
     sdk_version: "current",
     vendor: true
 }
