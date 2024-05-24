@@ -1,4 +1,4 @@
-# Device proprietary files - from munch MIUI V14.0.6.0.TLMMIXM package, unless pinned
+# Device proprietary files - from munch HyperOS V816.0.1.0.ULMMIXM  package, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -823,7 +823,7 @@ system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
--system_ext/priv-app/ims/ims.apk|6ddec8df47b66c1903de79c7cfb790d2381bb987
+-system_ext/priv-app/ims/ims.apk|4d12e2c608a929c1e55b2cb907a68f0daac78d73
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -1020,7 +1020,7 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
 # Power-off alarm
--product/app/PowerOffAlarm/PowerOffAlarm.apk
+-system_ext/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
