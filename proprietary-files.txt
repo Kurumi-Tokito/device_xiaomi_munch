@@ -1,4 +1,4 @@
-# Device proprietary files - from munch HyperOS V816.0.1.0.ULMMIXM  package, unless pinned
+# Device proprietary files - from munch HyperOS V816.0.2.0.ULMMIXM  package, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -812,7 +812,7 @@ system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
--system_ext/priv-app/ims/ims.apk|4d12e2c608a929c1e55b2cb907a68f0daac78d73
+-system_ext/priv-app/ims/ims.apk|15ff2ffe456ec58bd10ff9f947899f225df42f09
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
