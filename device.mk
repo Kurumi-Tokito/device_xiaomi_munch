@@ -312,7 +312,7 @@ PRODUCT_PACKAGES += \
 
 # Graphene apps
 PRODUCT_PACKAGES += \
-    Apps
+    AppStore
 
 # Lineage Health
 PRODUCT_PACKAGES += \
