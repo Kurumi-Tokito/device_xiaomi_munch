@@ -134,6 +134,9 @@ vendor.audio_hal.period_multiplier=2
 vendor.audio_hal.period_size=192
 vendor.voice.path.for.pcm.voip=true
 
+# Audio hardware
+ro.hardware.audio.primary=munch
+
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
