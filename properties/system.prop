@@ -53,9 +53,6 @@ ro.lmk.kill_timeout_ms=15
 # LMK
 ro.config.low_ram=false
 
-# Media
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
