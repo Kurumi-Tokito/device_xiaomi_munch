@@ -26,4 +26,31 @@ It is also known as POCO F4 (globally) and Redmi K40S (China).
 
 ![POCO F4](https://i.imgur.com/8vGvhMe.jpeg)
 
-Copyright (C) 2022 ArrowOS.
+
+## Usage
+Clone the repo under the following directory `device/xiaomi/munch`:
+
+```
+git clone https://github.com/Ivy-Tokito/device_xiaomi_munch.git device/xiaomi/sm8250-common
+```
+
+## Contributing
+Contributions to this repository are welcome!  
+Feel free to submit a pull request :)
+
+## Special Thanks
+<a href="https://github.com/Ivy-Tokito/device_xiaomi_munch/graphs/contributors"><img src="https://contrib.rocks/image?repo=Ivy-Tokito/device_xiaomi_munch&max=5"/></a>
+
+Check [contributors](https://github.com/Ivy-Tokito/device_xiaomi_munch/graphs/contributors) section for more.
+
+## Disclaimer
+These device tree files are provided as-is and may require customization to suit your specific use case. Always review and test thoroughly before deploying in a production environment.
+
+## License
+```
+#
+# Copyright (C) 2021 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```

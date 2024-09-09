@@ -1,8 +1,12 @@
 [
   {
-    "repository":   "android_device_xiaomi_sm8250-common",
-    "target_path":  "device/xiaomi/sm8250-common",
-    "branch":       "arrow-13.1-munch"
+    "remote":       "github",
+    "repository":   "madmax7896/android_hardware_xiaomi",
+    "target_path":  "hardware/xiaomi"
+  },
+  {
+    "repository":   "android_kernel_xiaomi_munch",
+    "target_path":  "kernel/xiaomi/munch"
   },
   {
     "remote":       "gitlab",
