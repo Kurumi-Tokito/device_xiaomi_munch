@@ -1,0 +1,15 @@
+android_app_import {
+	name: "Thor",
+	apk: "prebuilt/Thor.apk",
+	presigned: true,
+	preprocessed: true,
+	dex_preopt: {
+		enabled: false,
+	},
+	product_specific: true,
+	overrides: [
+		"Browser2",
+		"Jellyfish",
+		"Jelly",
+	],
+}
