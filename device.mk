@@ -285,10 +285,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
 
-# Prebuilt Packages
-PRODUCT_PACKAGES += \
-    DuckDuckGo
-
 # KProfiles
 PRODUCT_PACKAGES += \
     KProfiles
@@ -544,6 +540,10 @@ ifeq ($(TARGET_USE_QTI_THERMAL_SERVICE),true)
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti
 endif
+
+# Thor Browser
+PRODUCT_PACKAGES += \
+    Thor
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
