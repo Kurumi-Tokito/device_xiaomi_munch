@@ -29,4 +29,6 @@ PRODUCT_MODEL := POCO F4
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-BUILD_FINGERPRINT := Redmi/munch/munch:14/UKQ1.231207.002/V816.0.5.0.ULMMIXM:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildDesc="munch-user 14 UKQ1.231207.002 V816.0.5.0.ULMMIXM release-keys" \
+    BuildFingerprint=Redmi/munch/munch:14/UKQ1.231207.002/V816.0.5.0.ULMMIXM:user/release-keys
