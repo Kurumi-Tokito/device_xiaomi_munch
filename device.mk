@@ -607,5 +607,15 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_PACKAGES += \
     MunchNfcOverlay
 
+# Wi-Fi Display
+PRODUCT_PACKAGES += \
+    libnl \
+    libpng.vendor \
+    libwfdaac_vendor \
+    vendor.qti.hardware.display.config-V5-ndk
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/munch/munch-vendor.mk)
