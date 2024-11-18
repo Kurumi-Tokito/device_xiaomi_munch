@@ -71,6 +71,16 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "/seclabel u:r:batterysecret:s0/d" "${2}"
             ;;
+        vendor/etc/libnfc-nci.conf)
+            [ "$2" = "" ] && return 0
+            grep -q "LEGACY_MIFARE_READER=1" "${2}" || cat << EOF >> "${2}"
+###############################################################################
+# Mifare Tag implementation
+# 0: General implementation
+# 1: Legacy implementation
+LEGACY_MIFARE_READER=1
+EOF
+            ;;
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             [ "$2" = "" ] && return 0
             grep -q "libpiex_shim.so" "${2}" || ${PATCHELF} --add-needed "libpiex_shim.so" "${2}"
