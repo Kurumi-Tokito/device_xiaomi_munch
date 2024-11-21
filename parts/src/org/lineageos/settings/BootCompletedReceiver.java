@@ -22,8 +22,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
-import android.content.SharedPreferences;
 import android.os.SystemProperties;
+import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.thermal.ThermalUtils;
@@ -37,15 +37,14 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
     private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
     private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure";
+    private static final String HBM_ENABLE_KEY = "hbm_mode";
+    private static final String HBM_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        
-        // File Utils
-        FileUtils.enableService(context);
 
         // Thermal Profiles
         ThermalUtils.startService(context);
@@ -53,11 +52,15 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Per app refresh rate
         RefreshUtils.startService(context);
 
-        // Dc-Dimming
+        // High Touch Polling Rate
+        TouchSamplingUtils.restoreSamplingValue(context);
+
+        // DC Dimming
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
 
-        // High Touch Polling Rate
-        TouchSamplingUtils.restoreSamplingValue(context);
+        // High Brightness Mode
+        boolean hbmEnabled = sharedPrefs.getBoolean(HBM_ENABLE_KEY, false);
+        FileUtils.writeLine(HBM_NODE, hbmEnabled ? "1" : "0");
     }
 }

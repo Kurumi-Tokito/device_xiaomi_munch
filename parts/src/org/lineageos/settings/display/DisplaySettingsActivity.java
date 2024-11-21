@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017,2021-2022 The LineageOS Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
-public class DcDimmingSettingsActivity extends CollapsingToolbarBaseActivity  {
+public class DisplaySettingsActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG_DCDIMMING = "dcdimming";
 
@@ -29,6 +29,6 @@ public class DcDimmingSettingsActivity extends CollapsingToolbarBaseActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new DcDimmingSettingsFragment(), TAG_DCDIMMING).commit();
+                new DisplaySettingsFragment(), TAG_DCDIMMING).commit();
     }
 }

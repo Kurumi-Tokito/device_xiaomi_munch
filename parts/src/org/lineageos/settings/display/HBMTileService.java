@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.lineageos.settings.hbm;
+package org.lineageos.settings.display;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -24,15 +24,13 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.settings.display.DisplayNodes;
 import org.lineageos.settings.utils.FileUtils;
 
-public class HBMModeTileService extends TileService {
+public class HBMTileService extends TileService {
 
-
-    private static final String HBM = "/sys/class/drm/card0/card0-DSI-1/disp_param";
-    private static final String HBM_KEY = "hbm";
-    private static final String BACKLIGHT = "/sys/class/backlight/panel0-backlight/brightness";
-
+    private String HBM_ENABLE_KEY;
+    private String HBM_NODE;
 
     private void updateUI(boolean enabled) {
         final Tile tile = getQsTile();
@@ -43,8 +41,10 @@ public class HBMModeTileService extends TileService {
     @Override
     public void onStartListening() {
         super.onStartListening();
+        HBM_ENABLE_KEY = DisplayNodes.getHbmEnableKey();
+        HBM_NODE = DisplayNodes.getHbmNode();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        updateUI(sharedPrefs.getBoolean(HBM_KEY, false));
+        updateUI(sharedPrefs.getBoolean(HBM_ENABLE_KEY, false));
     }
 
     @Override
@@ -56,10 +56,9 @@ public class HBMModeTileService extends TileService {
     public void onClick() {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        final boolean enabled = !(sharedPrefs.getBoolean(HBM_KEY, false));
-        FileUtils.writeLine(HBM, enabled ? "0x10000" : "0xF0000");
-        FileUtils.writeLine(BACKLIGHT, enabled ? "2047" : "2047");
-        sharedPrefs.edit().putBoolean(HBM_KEY, enabled).commit();
+        final boolean enabled = !(sharedPrefs.getBoolean(HBM_ENABLE_KEY, false));
+        FileUtils.writeLine(HBM_NODE, enabled ? "1" : "0");
+        sharedPrefs.edit().putBoolean(HBM_ENABLE_KEY, enabled).commit();
         updateUI(enabled);
     }
 }

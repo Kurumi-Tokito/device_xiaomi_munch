@@ -132,6 +132,14 @@ on property:ro.boot.dp=0x0
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
+    # Allow system apps to modify exposure dim layer state
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+
+    # Allow system apps to modify exposure of HBM state
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chown system system /sys/class/touch/touch_dev/partial_diff_data
 
@@ -422,4 +430,3 @@ on property:sys.boot_completed=1
     chmod 0777 /data/vendor/camera/model/ldc_model/ldc_cap_policy
     # Disable statsd service to prevent additional battery drain
     stop statsd
-
