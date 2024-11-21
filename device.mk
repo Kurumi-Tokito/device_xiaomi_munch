@@ -216,17 +216,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-# Fonts
-PRODUCT_PACKAGES += \
-    GoogleSans-Regular.ttf \
-    GoogleSans-Italic.ttf
-
-PRODUCT_PACKAGES += \
-    FontGoogleSansOverlay
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/extras/fonts/fonts_customization_google_sans.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization_google_sans.xml
-
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
