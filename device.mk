@@ -345,6 +345,11 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    fstab.qcom \
+    fstab.qcom.ramdisk \
+    fstab.qcom.vendor_ramdisk
+
+PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.mdm.sh \
     init.mi.btmac.sh \
@@ -359,8 +364,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.target.rc \
     init.xiaomi.rc \
-    fstab.qcom \
-    fstab.qcom_ramdisk \
     ueventd.qcom.rc
 
 # Sensors
