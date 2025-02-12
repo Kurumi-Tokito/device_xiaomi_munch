@@ -19,7 +19,7 @@ $(call inherit-product, device/xiaomi/munch/device.mk)
 VOLTAGE_BUILD_TYPE := UNOFFICIAL
 
 # Bootanimation Resolution
-TARGET_BOOT_ANIMATION_RES := 2160
+TARGET_BOOT_ANIMATION_RES := 1920
 
 PRODUCT_NAME := voltage_munch
 PRODUCT_DEVICE := munch
