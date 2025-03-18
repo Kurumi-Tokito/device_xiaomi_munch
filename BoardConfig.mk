@@ -81,7 +81,6 @@ ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_nfc.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_munch
-TARGET_RECOVERY_DEVICE_MODULES := libinit_munch
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
