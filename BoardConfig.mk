@@ -57,10 +57,6 @@ USE_CUSTOM_AUDIO_POLICY := 1
 TARGET_BOOTLOADER_BOARD_NAME := munch
 TARGET_NO_BOOTLOADER := true
 
-# Camera
-TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
-TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT = true
-
 # Camera Malloc
 MALLOC_SVELTE_FOR_LIBC32 := true
 
@@ -81,9 +77,6 @@ DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 ODM_MANIFEST_SKUS += nfc
 ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_nfc.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_munch
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
@@ -107,9 +100,6 @@ KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1 LLVM_IAS=1
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
-
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # LTO
 GLOBAL_THINLTO := true

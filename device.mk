@@ -121,6 +121,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
 
+$(call soong_config_set,camera,override_format_from_reserved,true)
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
@@ -205,6 +207,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_munch)
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
@@ -228,6 +233,8 @@ PRODUCT_PACKAGES += \
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
+
+$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
 
 # Logging
 SPAMMY_LOG_TAGS := \
